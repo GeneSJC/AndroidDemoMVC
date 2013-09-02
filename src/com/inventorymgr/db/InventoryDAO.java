@@ -69,12 +69,12 @@ public class InventoryDAO
 	 * @param character
 	 * @return
 	 */
-	public long insertItem(String itemTitle, String askPrice)
+	public long insertItem(String itemTitle, String askPrice, String lowestPrice)
 	{
 		ContentValues values = new ContentValues();
 		values.put(ITEM_TITLE, itemTitle);
 		values.put(ITEM_ASK_PRICE, askPrice);
-		values.put(ITEM_LOWEST_PRICE, askPrice);
+		values.put(ITEM_LOWEST_PRICE, lowestPrice);
 
 		return database.insert(TABLE_NAME, null, values);
 	}

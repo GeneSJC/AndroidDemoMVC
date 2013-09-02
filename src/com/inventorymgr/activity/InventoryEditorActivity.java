@@ -62,18 +62,30 @@ public class InventoryEditorActivity extends Activity implements OnClickListener
 		String lowestPrice = ((TextView)findViewById(R.id.lowest_price)).getText().toString();
 		
 		//Insert the item after data validation.for now, lets skip data validation
-		long insertedId = dao.insertItem(itemTitle, askPrice);
+		long insertedId = dao.insertItem(itemTitle, askPrice, lowestPrice);
 		
 		String msg = "New item with id= "+insertedId+" has been created ";
 		Util.debug1(msg);
 		Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
 		
-		InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-		inputManager.hideSoftInputFromWindow(
-				getCurrentFocus().getWindowToken(),
-				InputMethodManager.HIDE_NOT_ALWAYS);
+		InventoryEditorActivity.hideKeyboard(this);
 		
 		super.finish();
 	}
+
+	    /* Hide Keyboard */
+	   public static void hideKeyboard(Activity activity)
+	   {
+	       InputMethodManager inputMethodManager = 
+	    		   (InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+	   
+	       View focus = activity.getCurrentFocus();
+	       if(focus != null)
+	       {
+	    	   		inputMethodManager.hideSoftInputFromWindow
+	    	   			(
+	    	   				focus.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS
+	    	   			);
+	       }
+	   }
 }
