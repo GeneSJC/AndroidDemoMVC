@@ -5,9 +5,11 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="10"
         android:targetSdkVersion="17" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -25,6 +27,14 @@
         <activity
             android:name="com.inventorymgr.activity.SplashActivity"
             android:label="SplashActivity" >
+        </activity>
+        <activity
+            android:name="com.inventorymgr.activity.WebRequestActivity"
+            android:label="WebRequestActivity" >
+        </activity>
+        <activity
+            android:name="com.inventorymgr.activity.demo.DrawerDemoActivity"
+            android:label="DrawerDemoActivity" >
         </activity>
         <activity
             android:name="com.inventorymgr.activity.InventoryEditorActivity"

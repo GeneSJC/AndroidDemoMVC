@@ -18,6 +18,20 @@
      android:text="Simple Toast"
      />
 
+     <Button
+     android:id="@+id/webrequest_button"
+     android:layout_height="wrap_content"
+     android:layout_width="fill_parent"
+     android:text="Web Request Example"
+     />
+
+     <Button
+     android:id="@+id/drawerdemo_button"
+     android:layout_height="wrap_content"
+     android:layout_width="fill_parent"
+     android:text="Drawer Example"
+     />
+
 <!--
  -->
 
